@@ -67,3 +67,8 @@ To make sure that it works, in the container run:
 2. Make sure that local xquartz socket is exposed on a TCP port. `lsof -i TCP:6000`
 3. Check this thread https://github.com/moby/moby/issues/8710
   
+
+
+### Notes
+For Dockerfile.apj, it will create the docker image with ns-3-dev built-in. The ns-3-dev is located at /home/ns/ns-3-allinone/ns-3-dev. If you would like to use your own ns-3-dev host directory, you can mount host folder into docker image with -v parameter. In this example, we will use the current working directory to be mounted in /home/ns3 of docker image:
+1. `docker run -v "${PWD}:/home/ns3" --rm -it "ns3dockerimage:latest" /bin/bash`
