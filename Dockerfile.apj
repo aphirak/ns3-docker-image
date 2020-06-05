@@ -62,16 +62,8 @@ RUN mkdir -p /home/ns3
 WORKDIR /home/ns3
 
 COPY ./src /home/ns3/
-
-#WORKDIR /home/ns3/ns-3-allinone
-
-#RUN ./build.py --enable-examples --enable-tests 
-##COPY . /usr
-
-# Configure and compile NS-3
-##RUN cd ns-allinone-3.26 && ./build.py --enable-examples --enable-tests
-
-##RUN ln -s /usr/ns-allinone-3.26/ns-3.26/ /usr/ns3/
+# Downloading and Building ns-3-dev into ns3 image
+RUN sh build-ns3.sh 
 
 # Cleanup
 RUN apt-get clean && \
