@@ -60,7 +60,9 @@ RUN apt-get install -y \
 RUN mkdir -p /usr/ns3
 WORKDIR /usr
 
-COPY . /usr
+#COPY . /usr
+RUN wget http://www.nsnam.org/release/ns-allinone-3.26.tar.bz2 \\
+    && tar -xf ns-allinone-3.26.tar.bz2
 
 # Configure and compile NS-3
 RUN cd ns-allinone-3.26 && ./build.py --enable-examples --enable-tests
