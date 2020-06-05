@@ -1,0 +1,3 @@
+[submodule "src/ns-3-allinone"]
+	path = src/ns-3-allinone
+	url = https://gitlab.com/nsnam/ns-3-allinone
